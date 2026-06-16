@@ -239,27 +239,3 @@ names.add("Alice");
 names.add("Bob");
 
 System.out.println(names);
-```
-
----
-
-## 12. Next Topics to Learn
-
-After mastering the basics, learn:
-
-1. Classes and Objects
-2. Constructors
-3. Inheritance
-4. Interfaces
-5. Collections Framework
-6. Exception Handling
-7. File Handling
-8. Multithreading
-9. JDBC (Database Connectivity)
-10. Spring Framework
-
-### Beginner Learning Path
-
-**Java Syntax → Variables → Operators → Conditions → Loops → Arrays → Methods → OOP → Collections → Exception Handling → File Handling → JDBC → Spring**
-
-If you're a complete beginner, I can also provide a **7-day Java study plan with practice programs**.
