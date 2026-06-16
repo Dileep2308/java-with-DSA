@@ -1,0 +1,224 @@
+# Control Statements in Java
+
+Control statements determine the flow of execution in a Java program. They are mainly classified into three categories:
+
+## 1. Selection (Decision-Making) Statements
+
+These statements execute different blocks of code based on conditions.
+
+### `if` Statement
+
+```java
+int age = 20;
+
+if (age >= 18) {
+    System.out.println("Eligible to vote");
+}
+```
+
+### `if-else` Statement
+
+```java
+int number = 10;
+
+if (number % 2 == 0) {
+    System.out.println("Even Number");
+} else {
+    System.out.println("Odd Number");
+}
+```
+
+### `if-else-if` Ladder
+
+```java
+int marks = 85;
+
+if (marks >= 90) {
+    System.out.println("Grade A");
+} else if (marks >= 75) {
+    System.out.println("Grade B");
+} else if (marks >= 50) {
+    System.out.println("Grade C");
+} else {
+    System.out.println("Fail");
+}
+```
+
+### `switch` Statement
+
+```java
+int day = 3;
+
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    case 3:
+        System.out.println("Wednesday");
+        break;
+    default:
+        System.out.println("Invalid Day");
+}
+```
+
+---
+
+## 2. Iteration (Looping) Statements
+
+These statements repeatedly execute a block of code.
+
+### `for` Loop
+
+```java
+for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+```
+
+Output:
+
+```
+1
+2
+3
+4
+5
+```
+
+### `while` Loop
+
+```java
+int i = 1;
+
+while (i <= 5) {
+    System.out.println(i);
+    i++;
+}
+```
+
+### `do-while` Loop
+
+The loop body executes at least once.
+
+```java
+int i = 1;
+
+do {
+    System.out.println(i);
+    i++;
+} while (i <= 5);
+```
+
+### Enhanced `for` Loop (For-Each)
+
+```java
+int[] numbers = {10, 20, 30, 40};
+
+for (int num : numbers) {
+    System.out.println(num);
+}
+```
+
+---
+
+## 3. Jump Statements
+
+These statements transfer control from one part of the program to another.
+
+### `break`
+
+Terminates the loop immediately.
+
+```java
+for (int i = 1; i <= 10; i++) {
+    if (i == 5) {
+        break;
+    }
+    System.out.println(i);
+}
+```
+
+Output:
+
+```
+1
+2
+3
+4
+```
+
+### `continue`
+
+Skips the current iteration and moves to the next iteration.
+
+```java
+for (int i = 1; i <= 5; i++) {
+    if (i == 3) {
+        continue;
+    }
+    System.out.println(i);
+}
+```
+
+Output:
+
+```
+1
+2
+4
+5
+```
+
+### `return`
+
+Exits a method and optionally returns a value.
+
+```java
+public static int add(int a, int b) {
+    return a + b;
+}
+```
+
+---
+
+## Summary Table
+
+| Category  | Statements                                 |
+| --------- | ------------------------------------------ |
+| Selection | `if`, `if-else`, `if-else-if`, `switch`    |
+| Iteration | `for`, `while`, `do-while`, enhanced `for` |
+| Jump      | `break`, `continue`, `return`              |
+
+### Interview Question
+
+**Difference between `while` and `do-while`:**
+
+| while                              | do-while                          |
+| ---------------------------------- | --------------------------------- |
+| Condition checked before execution | Condition checked after execution |
+| May execute zero times             | Executes at least once            |
+
+Example:
+
+```java
+int x = 10;
+
+while (x < 5) {
+    System.out.println("while");
+}
+
+do {
+    System.out.println("do-while");
+} while (x < 5);
+```
+
+Output:
+
+```
+do-while
+```
+
+because the `do-while` loop runs once before checking the condition.
