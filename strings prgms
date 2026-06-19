@@ -1,0 +1,119 @@
+class Solution {
+    public String longestPalindrome(String s) {
+        if (s == null || s.length() < 1) {
+            return "";
+        }
+
+        int start = 0;
+        int end = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            int len1 = expand(s, i, i);    
+            int len2 = expand(s, i, i + 1); 
+
+            int len = Math.max(len1, len2);
+
+            if (len > end - start) {
+                start = i - (len - 1) / 2;
+                end = i + len / 2;
+            }
+        }
+
+        return s.substring(start, end + 1);
+    }
+
+    private int expand(String s, int left, int right) {
+        while (left >= 0 &&
+               right < s.length() &&
+               s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
+        }
+
+        return right - left - 1;
+    }
+}
+***LONGEST PALINDROME***
+
+import java.util.Scanner;
+
+public class ReverseString {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        String rev = "";
+
+        for(int i = str.length() - 1; i >= 0; i--) {
+            rev = rev + str.charAt(i);
+        }
+
+        System.out.println("Reverse: " + rev);
+    }
+}
+***REVERSE OF A STRING***
+
+
+
+import java.util.Scanner;
+
+public class PalindromeString
+{
+    public static void main(String[] args) 
+{
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+        String rev = "";
+        for(int i = str.length()-1; i >= 0; i--)
+{
+       rev += str.charAt(i);
+        }
+        if(str.equals(rev))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+
+***PALINDROME OF A STRING***
+
+
+import java.util.Scanner;
+public class UpperCase
+{
+    public static void main(String[] args) 
+{
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+        String result = "";
+        for(int i = 0; i < str.length(); i++) 
+{
+            char ch = str.charAt(i);
+            if(ch >= 'a' && ch <= 'z')
+{
+                ch = (char)(ch - 32);
+            }
+            result += ch;
+        }
+        System.out.println("Uppercase: " + result);
+    }
+}
+
+***UPPER CASES OF A STRING***
+
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+{
+        String name = "Dileep";
+        System.out.println(name);
+    }
+}
