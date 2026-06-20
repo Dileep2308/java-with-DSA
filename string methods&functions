@@ -1,212 +1,142 @@
 # Strings in Java
-
 A **String** is a sequence of characters enclosed in double quotes (`"`).
 
 ```java
 String name = "Java";
-```
-
 Strings in Java are objects of the `String` class and are **immutable** (cannot be changed after creation).
 
 ---
-
 # Creating Strings
-
 ### Using String Literal
-
 ```java
 String str1 = "Hello";
 ```
-
 ### Using `new` Keyword
-
 ```java
 String str2 = new String("Hello");
 ```
-
 ---
 
 # Common String Methods
 
 ## 1. `length()`
-
 Returns the number of characters.
-
 ```java
 String str = "Java";
-
 System.out.println(str.length());
 ```
-
 Output:
-
-```
 4
 ```
-
 ---
-
 ## 2. `charAt()`
-
 Returns the character at a specific index.
-
 ```java
 String str = "Java";
-
 System.out.println(str.charAt(1));
 ```
-
 Output:
-
-```
 a
 ```
 
 ---
-
 ## 3. `toUpperCase()`
-
 Converts to uppercase.
-
 ```java
 String str = "java";
-
 System.out.println(str.toUpperCase());
 ```
-
 Output:
-
 ```
 JAVA
 ```
 
----
-
+--
 ## 4. `toLowerCase()`
-
 Converts to lowercase.
-
 ```java
 String str = "JAVA";
-
 System.out.println(str.toLowerCase());
 ```
-
 Output:
-
 ```
 java
 ```
 
 ---
-
 ## 5. `equals()`
-
 Compares string contents.
-
 ```java
 String s1 = "Java";
 String s2 = "Java";
-
 System.out.println(s1.equals(s2));
 ```
-
 Output:
-
 ```
 true
 ```
 
 ---
-
 ## 6. `equalsIgnoreCase()`
-
 Ignores case while comparing.
-
 ```java
 String s1 = "JAVA";
 String s2 = "java";
-
 System.out.println(s1.equalsIgnoreCase(s2));
 ```
-
 Output:
-
 ```
 true
 ```
-
 ---
 
 ## 7. `compareTo()`
 
 Lexicographically compares strings.
-
 ```java
 String s1 = "Apple";
 String s2 = "Banana";
-
 System.out.println(s1.compareTo(s2));
-```
-
+``
 Output:
-
 ```
 Negative Value
 ```
 
 ---
-
 ## 8. `contains()`
-
 Checks if a string contains a sequence.
-
 ```java
 String str = "Java Programming";
-
 System.out.println(str.contains("Java"));
 ```
-
 Output:
-
 ```
 true
 ```
 
 ---
-
 ## 9. `substring()`
-
 Extracts part of a string.
-
 ```java
 String str = "Programming";
-
 System.out.println(str.substring(3));
 System.out.println(str.substring(0, 4));
 ```
-
 Output:
-
 ```
 gramming
 Prog
 ```
 
 ---
-
 ## 10. `replace()`
-
 Replaces characters or words.
-
 ```java
 String str = "Java";
-
 System.out.println(str.replace('a', 'o'));
 ```
-
 Output:
-
 ```
 Jovo
 ```
@@ -214,17 +144,12 @@ Jovo
 ---
 
 ## 11. `trim()`
-
 Removes leading and trailing spaces.
-
 ```java
 String str = "  Hello Java  ";
-
 System.out.println(str.trim());
 ```
-
 Output:
-
 ```
 Hello Java
 ```
@@ -232,125 +157,89 @@ Hello Java
 ---
 
 ## 12. `startsWith()` and `endsWith()`
-
 ```java
 String str = "Java Programming";
-
 System.out.println(str.startsWith("Java"));
 System.out.println(str.endsWith("ing"));
 ```
-
 Output:
-
 ```
 true
 true
 ```
-
 ---
-
 ## 13. `indexOf()`
-
 Returns the position of a character or substring.
-
 ```java
 String str = "Java";
-
 System.out.println(str.indexOf('v'));
 ```
-
 Output:
-
 ```
 2
 ```
 
 ---
-
 ## 14. `isEmpty()`
-
 Checks whether a string is empty.
-
 ```java
 String str = "";
-
 System.out.println(str.isEmpty());
 ```
-
 Output:
-
 ```
 true
 ```
 
 ---
-
 # String Concatenation
-
 ### Using `+` Operator
 
 ```java
 String firstName = "John";
 String lastName = "Doe";
-
 String fullName = firstName + " " + lastName;
-
 System.out.println(fullName);
 ```
-
 Output:
-
 ```
 John Doe
 ```
-
 ### Using `concat()`
-
 ```java
 String s1 = "Hello ";
 String s2 = "Java";
-
 System.out.println(s1.concat(s2));
 ```
-
 Output:
-
 ```
 Hello Java
 ```
-
 ---
-
 # String Functions (User-Defined Methods)
-
 A function (method) can receive a String and return a String.
-
 ### Example: Reverse a String
 
 ```java
-public class Main {
-
-    static String reverse(String str) {
+public class Main
+{
+    static String reverse(String str) 
+{
         String rev = "";
-
-        for(int i = str.length() - 1; i >= 0; i--) {
+        for(int i = str.length() - 1; i >= 0; i--) 
+{
             rev += str.charAt(i);
         }
-
         return rev;
     }
-
-    public static void main(String[] args) {
-
+    public static void main(String[] args) 
+{
         String result = reverse("Java");
-
         System.out.println(result);
     }
 }
 ```
-
 Output:
-
 ```
 avaJ
 ```
@@ -358,19 +247,13 @@ avaJ
 ---
 
 # StringBuilder
-
 Since Strings are immutable, use `StringBuilder` for frequent modifications.
-
 ```java
 StringBuilder sb = new StringBuilder("Java");
-
 sb.append(" Programming");
-
 System.out.println(sb);
 ```
-
 Output:
-
 ```
 Java Programming
 ```
@@ -389,14 +272,10 @@ Example:
 
 ```java
 StringBuilder sb = new StringBuilder("Java");
-
 sb.reverse();
-
 System.out.println(sb);
 ```
-
 Output:
-
 ```
 avaJ
 ```
@@ -423,27 +302,20 @@ else
 ```java
 String str = "Java Programming";
 int count = 0;
-
 for(char ch : str.toLowerCase().toCharArray()) {
     if("aeiou".indexOf(ch) != -1)
         count++;
 }
-
 System.out.println(count);
-```
+``
 
 ### Count Words
-
 ```java
 String str = "Java is easy";
-
 String[] words = str.split(" ");
-
 System.out.println(words.length);
 ```
-
 Output:
-
 ```
 3
 ```
