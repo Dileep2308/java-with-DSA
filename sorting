@@ -1,0 +1,30 @@
+public class Main {
+    private static void count(int[] arr){
+        int freq0=0, freq1=0 ,freq2=0;
+        for(int ind =0; ind <arr.length; ind++)
+        {
+            if(arr[ind]==0)
+                freq0++;
+            else if(arr[ind]==1)
+                freq1++;
+            else
+                freq2++;
+        }
+        for(int ind = 0; ind < freq0 ; ind++){
+            arr[ind] = 0;
+        }
+        for(int ind = freq0; ind < (freq1+freq1) ; ind++){
+            arr[ind] = 1;
+        }
+        for(int ind = freq0+freq1; ind < (freq0+freq1+ freq2) ; ind++){
+            arr[ind] = 2;
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr= {0,1,2,2,1,0,1,2,0,0,2,1,1,2,0,1,0,2};
+        count(arr);
+        for(int num: arr){
+            System.out.print(num+ " ");
+        }
+    }
+}
